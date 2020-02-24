@@ -69,4 +69,18 @@ edit /etc/fstab file, comment out mouted partitions to keep persistency
  * Mounts can be created using systemd .mount files
  * Using .mount file allows you to be more specific in defining dependencies
  * Use systemctl cat tmp.mount
+ ```bash
+ root@# systemctl cat tmp.mount  //here is systemd tmp mount file,Just copy this file to create a custom mount
+ // in this file there 2 part 
+ [Unit] // not really important the sense of mount
+ 
+ 
+ [Mount] // this is the important section of file
+ What= // so what should be mounted
+ Where= // to where
+ Type= // what kind of file system
+ Options= // some options such defauls
+ ```
+ To see active status of tmp.mount
+ `# systemctl status tmp.mount`
  
