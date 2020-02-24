@@ -57,3 +57,9 @@ Essensial configuration is in `/etc/fstab`
 
 *  dmesg | grep [partition]
 Set the file system again or check to the logs
+
+###T2
+* `A start job is running for dev-xxx.device`
+* Wait then will start emergency mood then enter root pass
+
+edit /etc/fstab file, comment out mouted partitions to keep persistency
