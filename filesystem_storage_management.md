@@ -6,8 +6,15 @@ There are two file system which is relatively important
   * Uses CoW (Copy on Write) to guarantee the integrity
   * The size can be increased but not decreased
   * `mkfs.xfs [partition]` command to make file system
-  
 `# mkfs.xfs /dev/sda1`
+### Managing XFS file systems
+ * The **xfsdump** utility can be used for creating backups of XFS formatted devices
+ * xfsdump can make full backup or different levels if incremental backup
+ * `xfsdump -I 0 -f /backuofiles/data.xfsdump /data` create a full backup of the /data directory
+ * **xfsrestore** command is used restore a backup that was made with **xfsdump**
+  * `xfsrestore -f /backuofiles/data.xfsdump /data`
+  * **xfsrepair** to repair broken xfs file systmes
+
 
 2. ext4
   * Backward compatibility ext2
