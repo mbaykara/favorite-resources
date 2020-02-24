@@ -63,3 +63,10 @@ Set the file system again or check to the logs
 * Wait then will start emergency mood then enter root pass
 
 edit /etc/fstab file, comment out mouted partitions to keep persistency
+
+### Managing Systemd Mounts
+ * /etc/ftab mounts already are systemd mounts
+ * Mounts can be created using systemd .mount files
+ * Using .mount file allows you to be more specific in defining dependencies
+ * Use systemctl cat tmp.mount
+ 
