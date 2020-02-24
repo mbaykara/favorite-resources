@@ -88,8 +88,9 @@ edit /etc/fstab file, comment out mouted partitions to keep persistency
  
  Lets create do our custom mount
 ```bash
-# cp /usr/lib/systemd/system/tmp.out  /etc/systemd/system/directoryName.mount // custom .mount file name is not arbitrary
-it should be same as the directory to be mounted. For subdirectory use dash(-) i.e data-client.mount
+// custom .mount file name is not arbitrary it should be same as the directory to be mounted. For subdirectory use dash(-) i.e data-client.mount
+# cp /usr/lib/systemd/system/tmp.out  /etc/systemd/system/directoryName.mount 
 ```
+
  
  
