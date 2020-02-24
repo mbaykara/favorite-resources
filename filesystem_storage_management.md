@@ -70,7 +70,8 @@ edit /etc/fstab file, comment out mouted partitions to keep persistency
  * Using .mount file allows you to be more specific in defining dependencies
  * Use systemctl cat tmp.mount
  ```bash
- root@# systemctl cat tmp.mount  //here is systemd tmp mount file,Just copy this file to create a custom mount
+ root@# systemctl cat tmp.mount  //here is systemd tmp mount file,Just copy this file to create a custom
+ mount
  // in this file there 2 part 
  [Unit] // not really important the sense of mount
  
@@ -82,5 +83,13 @@ edit /etc/fstab file, comment out mouted partitions to keep persistency
  Options= // some options such defauls
  ```
  To see active status of tmp.mount
- `# systemctl status tmp.mount`
+ 
+ `# systemctl status tmp.mount` if it's not active hit `systemctl enable tmp.mount`
+ 
+ Lets create do our custom mount
+```bash
+# cp /usr/lib/systemd/system/tmp.out  /etc/systemd/system/directoryName.mount // custom .mount file name is not arbitrary
+it should be same as the directory to be mounted. For subdirectory use dash(-) i.e data-client.mount
+```
+ 
  
