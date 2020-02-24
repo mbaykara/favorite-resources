@@ -21,6 +21,14 @@ There are two file system which is relatively important
 There are also at least two approach to perform this task such as
 1. `parted` is default in RHEL 8 
 
-`# parted /dev/sda1`
+```bash 
+ # parted /dev/sda1
+ # print 
+ # mklabel msdos | gpt
+ # mkpart part-type name fs-type start end
+ # print
+ # quit
+ 
+```
 
-`print` to see current structure
+
