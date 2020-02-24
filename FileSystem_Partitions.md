@@ -30,5 +30,30 @@ There are also at least two approach to perform this task such as
  # quit
  
 ```
+2. Using `fdisk`
+```bash
+# fdisk /dev/sda1
+then processing partition process 
+```
+### How to mount created partition?
 
+* `mount [partition] [DestinationToBeMounted]`
+* `mount /dev/sda1 /mnt`
+* `umount [partion | Destination]`
 
+### How to automate mounting process ?
+Essensial configuration is in `/etc/fstab`
+```bash
+# vim /etc/fstab
+-## add partition, destination, filesystem
+-/dev/sda1         /xfs          xfs       defaults   0 0
+-
+# systemctl daemon-reload 
+# mount -a
+```
+
+### Troubleshooting 
+* mount: /xfs: wrong fs type, bad option, bad superblock on /dev/sda1, missing codepage or helper program, or other error.
+
+*  dmesg | grep [partition]
+Set the file system again or check to the logs
