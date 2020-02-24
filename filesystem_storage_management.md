@@ -91,6 +91,19 @@ edit /etc/fstab file, comment out mouted partitions to keep persistency
 // custom .mount file name is not arbitrary it should be same as the directory to be mounted. For subdirectory use dash(-) i.e data-client.mount
 # cp /usr/lib/systemd/system/tmp.out  /etc/systemd/system/directoryName.mount 
 ```
+Then the file will looks as below
+```bash
+[Unit]
+Description=articles
+Documentation=man
+Conflicts=umount.target
+Before=local-fs.target umount
 
+[Mount]
+What=LABEL=customLabel
+Where=/directoryName
+Type=ext4
+Options=defaults
+```
  
  
