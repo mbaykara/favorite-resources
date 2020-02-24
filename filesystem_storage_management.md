@@ -105,5 +105,13 @@ Where=/directoryName
 Type=ext4
 Options=defaults
 ```
+Let's tell systemd to we've created a new configuration file
+
+`# systemctl daemon-reload` 
+if it's not mounted to the right directory then
+```bash
+# umount /directoryName
+# systemctl enable --now directoryName.mount // it should be okay now
+```
  
- 
+The consistent way to do mounting is using  systemd
