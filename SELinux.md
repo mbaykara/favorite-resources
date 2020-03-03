@@ -44,5 +44,8 @@ $ ps -auxZ | grep ssh
 system_u:system_r:sshd_t:s0-s0:c0.c1023
 
 Crucial part is sshd_t context-type which discribe what the process allow to do
+# To change boolean context
+$ getsebool -a | grep http
+$ setsebool -P http_enable_homedirs on // will make avaiblable to save in home
 ```
 
