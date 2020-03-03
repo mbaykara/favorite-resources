@@ -55,3 +55,8 @@ $ setsebool -P http_enable_homedirs on // will make avaiblable to save in home
 # then run commmad below
 $ restorecon -Rv /web # R-ecurive and -v erbose
 ```
+### SELinux Log Messages
+* SELinux uses **auditd** to write  log messages to the audit log  
+* Ensure that **sealert** is available, it interprets messages from the audit log applies SELnux AI, and
+write meaningful messages to /var/log/messages
+* Run the sealert command, including the UUID message to get advice on how troubleshoot specific issues
