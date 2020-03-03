@@ -60,3 +60,9 @@ $ restorecon -Rv /web # R-ecurive and -v erbose
 * Ensure that **sealert** is available, it interprets messages from the audit log applies SELnux AI, and
 write meaningful messages to /var/log/messages
 * Run the sealert command, including the UUID message to get advice on how troubleshoot specific issues
+
+```bash
+$ grep AVC /var/log/message/audit/audit.log  // AVC--Access Vector Cat
+# Another way to see logs
+$ journalctl | grep sealert  //see SELinux alert
+```
