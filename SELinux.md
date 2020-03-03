@@ -66,3 +66,13 @@ $ grep AVC /var/log/message/audit/audit.log  // AVC--Access Vector Cat
 # Another way to see logs
 $ journalctl | grep sealert  //see SELinux alert
 ```
+### Firewall
+To configure firewall, RedHat used **firewall-cmd** command
+```bash
+PS: Run as root
+
+$ firewall-cmd --list-all # will all firewall current configuration
+$ firewall-cmd --get-services # to see service that might be allow by firewall
+# Let's simply allow ftp service
+$ firewall-cmd --add-service ftp --permanent 
+```
