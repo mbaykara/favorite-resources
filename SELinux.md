@@ -48,4 +48,10 @@ Crucial part is sshd_t context-type which discribe what the process allow to do
 $ getsebool -a | grep http
 $ setsebool -P http_enable_homedirs on // will make avaiblable to save in home
 ```
+### Bypassing SELinux to serve apache http custom .html files
 
+ `semanage fcontext -a -t httpd_sys_content_t"/web(/.*)?"`// see man semanage page
+```bash
+# then run commmad below
+$ restorecon -Rv /web # R-ecurive and -v erbose
+```
