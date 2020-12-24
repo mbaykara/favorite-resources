@@ -22,3 +22,7 @@ kubectl rollout history deployment rolling-nginx
 //if you want to rollback
 kubectl rollout undo deployment rolling-nginx
 ```
+##### 3. Create deployment quickly
+```
+kubectl create deployment --image=nginx mywebserver --replicas=5 -o yaml > nginx.yaml
+```
