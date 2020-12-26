@@ -26,3 +26,11 @@ kubectl rollout undo deployment rolling-nginx
 ```
 kubectl create deployment --image=nginx mywebserver --replicas=5 -o yaml > nginx.yaml
 ```
+#### 4. Exposing a service
+Create a deployment
+```
+kubectl create deployment nginx --image=nginx --port 80 -o yaml > nginx.yaml
+kubectl create -f nginx.yaml
+kubectl expose deployment nginx --port 80 --type=NodePort
+
+```
