@@ -34,3 +34,22 @@ kubectl create -f nginx.yaml
 kubectl expose deployment nginx --port 80 --type=NodePort
 
 ```
+#### 5. Create a namespace and run an application in
+```
+kubectl create namespace production
+```
+see all namespaces
+```
+kubectl get all --all-namespaces
+```
+To use namespace
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx
+  name: nginx
+  namespace: production
+```
