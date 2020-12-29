@@ -56,6 +56,8 @@ metadata:
 #### 6. Which command would you use to find all developments by specific label
 ```
 kubectl get deployment --selector app=nginx
+or
+kubectl get all --selector='app=nginx'
 ```
 #### 7. Using ConfigMaps
 * In the ckad-ns2 namespace run a Pod based   alpine image named alpine.yaml
