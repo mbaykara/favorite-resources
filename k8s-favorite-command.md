@@ -64,6 +64,31 @@ kubectl get all --selector='app=nginx'
 * `localport` is set to `localhost:8082`
 * `external_url` is set to `linux.com`
 
+```
+kubectl create ns ckad-ns2  //create namespace
+kubectl create configmap | less   // will give examples and tips how to create it
+kubectl create configmap myconfig --from-literal=localport=localhost:8082 --from-literal=external_url=linux.com
+/// pod that use them. look k8s docs or kubectl explain pods.spec.contianers  | less
+kubectl describe -n <NamespaceName> pods <PodName>
+```
+The pod yaml looks:
+```
+kind: Pod
+apiVersion: v1
+metadata:
+  name: alpine-pod
+  namespace: ckad-ns2
+spec:
+  containers:
+  - name: alpine
+    image: alpine
+    command: ["sleep", "3600"]
+    envFrom:
+    - configMapRef:
+        name: my-config
+```
+
+
 #### 8. Using sidecars
 * Create namespace `ckad-ns3`
 * 1. Container runs `busybox`  and write `date` in `/var/log/date.log`
