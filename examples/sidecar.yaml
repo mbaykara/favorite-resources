@@ -1,0 +1,25 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sidecar-pod
+  namespace: ckad-ns3
+spec: 
+  containers:
+  - name: logger
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do date >> /var/log/date.txt; sleep 10;done"]
+    volumeMounts:
+    - name: varlog
+      mountPath: /var/log
+    imagePullPolicy: IfNotPresent
+  - name: log-collector
+    image: alpine
+    command: [/bin/sh, -c, 'tail -n+1 -f /var/log/date.txt']
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: varlog
+      mountPath: /var/log
+  volumes:
+  - name: varlog 
+    emptyDir: {}
