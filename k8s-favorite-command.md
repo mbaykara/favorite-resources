@@ -94,6 +94,37 @@ spec:
 * 1. Container runs `busybox`  and write `date` in `/var/log/date.log`
 * 2. Container runs as Sidecar and provice access to that file using `hostPath share volume`
 * 3. Images will be pulled only incase of unavailability.
+```
+kubectl create ns ckad-ns3
+```
+then sidecar.yaml
+```
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sidecar-pod
+  namespace: ckad-ns3
+spec: 
+  volumes:
+  - name: varlog 
+    emptyDir: {}
+  containers:
+  - name: logger
+    image: busybox
+    command: ['/bin/sh']
+    args: ["-c", "while true; do date >> /var/log/date.txt; sleep 5;done"]
+    volumeMounts:
+    - mountPath: /var/log
+      name: varlog
+    imagePullPolicy: IfNotPresent
+  - name: log-collector
+    image: alpine
+    command: ["sleep", "3600"]
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: varlog
+      mountPath: /var/log
+```
 
 #### 9. Inspecting Containers
 * The pod which runs log server has failed. How to analyse it?
