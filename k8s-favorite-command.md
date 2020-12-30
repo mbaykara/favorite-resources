@@ -128,6 +128,7 @@ spec:
 
 #### 9. Inspecting Containers
 * The pod which runs log server has failed. How to analyse it?
+`kubectl logs -n ckad-ns3 sidecar-pod -c log-collector `
 #### 10. Using Probes
 * Create a Pod that runs the httpd webserver.
 * Webserver run in namespace ckad-ns3 and offer services on port `80`
