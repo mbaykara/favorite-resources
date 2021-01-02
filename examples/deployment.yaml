@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webshop
+  name: webshop
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: webshop
+  strategy: 
+    rollingUpdate: 
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webshop
+    spec:
+      containers:
+      - image: nginx:1.8
+        name: nginx
+        resources: {}
+status: {}
