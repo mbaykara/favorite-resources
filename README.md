@@ -7,4 +7,15 @@ Here is some notes that i took from following book [RHCSA by Sander Van Vugt](ht
 * http://highscalability.com/
 * https://news.ycombinator.com/
 * https://www.infoq.com/
-Site Reliability Engineering
+
+
+### Bash links
+* [Advanced Bash-Scripting](https://tldp.org/LDP/abs/html/index.html)
+* [Minimal Safe Bash](https://betterdev.blog/minimal-safe-bash-script-template)
+
+### Contianer
+* [Containers](https://www.ianlewis.org/en)
+* [Docker layer](https://github.com/wagoodman/dive)
+
+### Linux
+* [Linux deep](http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html)
