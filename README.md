@@ -16,6 +16,7 @@ Here is some notes that i took from following book [RHCSA by Sander Van Vugt](ht
 ### Contianer
 * [Containers](https://www.ianlewis.org/en)
 * [Docker layer](https://github.com/wagoodman/dive)
+* [Container Network](https://iximiuz.com/en/posts/container-networking-is-simple/)
 
 ### Linux
 * [Linux deep](http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html)
