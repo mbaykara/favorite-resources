@@ -27,6 +27,7 @@ Here is some notes that i took from following book [RHCSA by Sander Van Vugt](ht
 * [Anatomy of Deb Package](https://www.joyfulbikeshedding.com/blog/2020-08-03-how-debian-packaging-works.html)
 * [free for dev](https://free-for.dev/#/?id=ci-and-cd)
 * [Best git practice](https://sethrobertson.github.io/GitBestPractices/)
+* [Build ur own xfce](https://docs.xfce.org/xfce/building)
 
 ### Awesome repos
 * [nice](https://reposhub.com/)
