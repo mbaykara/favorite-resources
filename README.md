@@ -18,6 +18,7 @@ Here is some notes that i took from following book [RHCSA by Sander Van Vugt](ht
 * [Docker layer](https://github.com/wagoodman/dive)
 * [Container Network](https://iximiuz.com/en/posts/container-networking-is-simple/)
 * [etcd K8S](https://www.mgasch.com/2021/01/listwatch-part-1/)
+* [Container Security](https://www.youtube.com/watch?v=lbJK28whV1Q)
 
 ### Linux
 * [Linux deep](http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html)
