@@ -21,6 +21,8 @@ Here is some notes that i took from following book [RHCSA by Sander Van Vugt](ht
 * [Container Security](https://www.youtube.com/watch?v=lbJK28whV1Q)
 * [Root your Docker host in 10 seconds](https://www.electricmonk.nl/log/2017/09/30/root-your-docker-host-in-10-seconds-for-fun-and-profit/)
 * [Best Practice Dockerfile via hadolint](https://github.com/hadolint/hadolint)
+* [containerize GO application without Docker via ko](https://github.com/google/ko)
+* [containerize Java applications without Dockerfile/Dockerfile](https://github.com/GoogleContainerTools/jib)
 
 ### Linux
 * [Linux deep](http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html)
