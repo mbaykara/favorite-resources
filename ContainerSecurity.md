@@ -6,3 +6,7 @@ mount namespace; the old root is no longer mounted and is therefore no longer ac
 The chroot system call doesn’t take this approach, leaving the old root accessible via mount points.
 
 #### mount namespace
+You may be familiar with the concept of mounting host directories into a container using docker run -v <host directory>:<container directory> ....
+  To achieve this, after the root filesystem has been put in place for the container, the target container directory is created and then the source 
+  host directory gets bind mounted into that target. Because each container has its own mount namespace, host directories mounted like this
+  are not visible from other containers.
