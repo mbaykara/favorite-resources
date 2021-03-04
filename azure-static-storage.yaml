@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: azurefile-pv
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+  azureFile:
+    secretName: demo-secret
+    shareName: aksshare
+    readOnly: false
+  mountOptions:
+  - dir_mode=0760
+  - file_mode=0760
+  - uid=1000
+  - gid=1000
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: azurefile-pvc 
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: ""
+  resources:
+    requests:
+      storage: 2Gi
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: azurefile-pod
+spec:
+  containers:
+  - name: frontline-pvc-pod
+    image: ubimax.azurecr.io/xserver-base-openj9:devops-refactor-application-images-20210302-88f22a79
+    command: ["sleep", "3600"]
+    volumeMounts:
+      - name: azure
+        mountPath: /mnt/azure
+    imagePullPolicy: IfNotPresent
+  initContainers:
+  - name: init-con
+    image: alpine
+    command: [/bin/sh, -c,'mkdir -p /mnt/azure/foo && date > /mnt/azure/foo/file.txt']
+    volumeMounts:
+      - name: azure
+        mountPath: /mnt/azure
+    imagePullPolicy: IfNotPresent
+  volumes:
+  - name: azure
+    persistentVolumeClaim:
+      claimName: azurefile-pvc 
