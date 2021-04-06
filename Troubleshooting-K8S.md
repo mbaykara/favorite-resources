@@ -19,3 +19,8 @@ $ sudo systemctl restart kubelet.service
 //get the validationhook and delete it corresponding one
 kubectl get validatingwebhookconfigurations.admissionregistration.k8s.io
 kubectl delete validatingwebhookconfigurations.admissionregistration.k8s.io  [nameOfVHook]
+```
+and 
+```
+ kubectl get clusterrolebindings.rbac.authorization.k8s.io
+```
