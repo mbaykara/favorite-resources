@@ -24,3 +24,14 @@ and
 ```
  kubectl get clusterrolebindings.rbac.authorization.k8s.io
 ```
+cluster binding
+```
+ 2142  kubectl get clusterrolebindings.rbac.authorization.k8s.io
+ 2143  kubectl delete clusterrolebindings.rbac.authorization.k8s.io testningx-ingress-nginx
+ 2144  kubectl delete clusterrolebindings.rbac.authorization.k8s.io testnginx-ingress-nginx
+ 2145  kubectl get clusterrolebindings.rbac.authorization.k8s.io enginx-ingress-nginx
+ 2146  kubectl delete clusterrolebindings.rbac.authorization.k8s.io enginx-ingress-nginx
+ 2147  kubectl get clusterrolebindings.rbac.authorization.k8s.io enginx-ingress-nginx
+ 2148  kubectl get clusterrolebindings.rbac.authorization.k8s.io
+ 2150  kubectl delete clusterrolebindings.rbac.authorization.k8s.io nginx-ingress-ingress-nginx
+ ```
