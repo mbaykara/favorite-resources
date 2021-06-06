@@ -4,3 +4,8 @@ Here is some notes that i took from following book [RHCSA by Sander Van Vugt](ht
 
 ## Some links to follow
 
+
+#### replace string in a text
+```
+sed 's/oldString/Newstring/' file.txt
+```
