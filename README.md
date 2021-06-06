@@ -7,5 +7,5 @@ Here is some notes that i took from following book [RHCSA by Sander Van Vugt](ht
 
 #### replace string in a text
 ```
-sed 's/oldString/Newstring/' file.txt
+sed -i 's/oldString/Newstring/' file.txt
 ```
