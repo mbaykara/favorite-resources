@@ -1,9 +1,0 @@
-fpm \
-  --input-type dir \
-  --output-type deb \
-  --name mypackage \
-  --version 1.0.0 \
-  --architecture all \
-  --package mypackage_1.0.0_all.deb \
-  --depends curl \
-  README.txt=/usr/share/doc/mypackage/
